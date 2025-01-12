@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2em;
+  background: rgb(247, 247, 247);
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.scroll-cards {
+  counter-reset: card;
+  position: relative;
+  display: block;
+  padding-bottom: 120vh;
+}
+
+.scroll-cards > .scroll-cards__item + .scroll-cards__item {
+  margin-top: 40vh;
+}
+
+.scroll-cards h1 {
+  position: sticky;
+  top: 2rem;
+  font-size: 2em;
+  margin: 0 0 0.5em;
+}
+
+.scroll-cards__item {
+  --offset: 0.5em;
+  color: #000;
+  position: sticky;
+  top: max(16vh, 10em);
+  padding: 2em 1.5em;
+  min-height: 19em;
+  background: #fff;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 5 * var(--offset));
+}
+
+h2 {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+/*
+If you use SASS you can shorten this one here like this:
+
+@for $i from 0 through 5 {
+  &:nth-of-type(#{$i}) {
+    transform: translate(calc((#{$i} - 1) * var(--offset)), calc((#{$i} - 1) * var(--offset)));
+  }
+}
+*/
+.scroll-cards__item:nth-of-type(0) {
+  transform: translate(calc((0 - 1) * var(--offset)), calc((0 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(1) {
+  transform: translate(calc((1 - 1) * var(--offset)), calc((1 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(2) {
+  transform: translate(calc((2 - 1) * var(--offset)), calc((2 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(3) {
+  transform: translate(calc((3 - 1) * var(--offset)), calc((3 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(4) {
+  transform: translate(calc((4 - 1) * var(--offset)), calc((4 - 1) * var(--offset)));
+}
+.scroll-cards__item:nth-of-type(5) {
+  transform: translate(calc((5 - 1) * var(--offset)), calc((5 - 1) * var(--offset)));
+}
+
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  .scroll-cards__item {
+    --offset: 1em;
+    padding-left: 5em;
+  }
+  .scroll-cards__item:before {
+    counter-increment: card;
+    content: "0" counter(card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75em;
+    height: 2.75em;
+    background: rgb(11, 11, 11);
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.25em;
+    top: 1.25em;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .scroll-cards h1 {
+    font-size: 3em;
+  }
+  .scroll-cards__item {
+    --offset: 1.25em;
+    max-width: 42em;
+  }
+}
+
+</style>
+<body>
+    
+</body>
+</html>
+
+<section class="flow">
+    <div class="wrapper">
+  
+        <div class="scroll-cards">
+          <h1 style="text-align: center; color: rgb(217, 152, 41)">SEO Process Flow Chart Steps</h1>
+          <article class="scroll-cards__item" aria-label="Wie - 1">
+            <h2 >Website Analysis (Audit)</h2>
+            <ul style="padding-top: 20px;">
+                <li><strong>Objective:</strong> To evaluate your website’s current performance and identify areas for improvement.</li>
+                <li><strong>Activities:</strong>
+                    <ul>
+                        <li>Analyze site speed, usability, and mobile-friendliness.</li>
+                        <li>Identify technical issues such as broken links, crawl errors, or duplicate content.</li>
+                        <li>Audit existing content for quality, relevance, and SEO effectiveness.</li>
+                        <li>Check indexing status and ensure search engines can properly crawl the site.</li>
+                    </ul>
+                </li>
+                <li><strong>Outcome:</strong> A detailed report highlighting technical, structural, and content issues that need to be fixed.</li>
+            </ul>
+        </article>
+        <article class="scroll-cards__item" aria-label="Wie - 1">
+            <h2>Keyword Research</h2>
+            <ul style="padding-top: 20px;">
+                <li><strong>Objective:</strong>To identify the best keywords for targeting your audience and driving relevant traffic.</li>
+                <li><strong>Activities:</strong>
+                    <ul>
+                        <li>Analyze site speed, usability, and mobile-friendliness.</li>
+                        <li>Identify technical issues such as broken links, crawl errors, or duplicate content.</li>
+                        <li>Audit existing content for quality, relevance, and SEO effectiveness.</li>
+                        <li>Check indexing status and ensure search engines can properly crawl the site.</li>
+                    </ul>
+                </li>
+                <li><strong>Outcome:</strong> A detailed report highlighting technical, structural, and content issues that need to be fixed.</li>
+            </ul>
+        </article>
+        <article class="scroll-cards__item" aria-label="Wie - 1">
+            <h2>On-Page Optimization</h2>
+            <ul style="padding-top: 20px;">
+                <li><strong>Objective:</strong>To optimize website elements for better visibility in search engine results.</li>
+                <li><strong>Activities:</strong>
+                    <ul>
+                        <li>Optimize meta tags: titles, descriptions, and headers with target keywords.</li>
+                        <li>Improve URL structure (e.g., short, descriptive URLs with keywords).</li>
+                        <li>Implement proper internal linking to improve navigation and site authority.</li>
+                        <li>Ensure images have alt tags and are optimized for faster loading.</li>
+                    
+                    </ul>
+                </li>
+                <li><strong>Outcome:</strong>A fully optimized website that aligns with search engine guidelines.</li>
+            </ul>
+          
+        </article>
+        <article class="scroll-cards__item" aria-label="Wie - 1">
+            <h2>Content Creation</h2>
+            <ul style="padding-top: 20px;">
+                <li><strong>Objective:</strong>To produce high-quality, relevant, and engaging content that attracts users and search engines.</li>
+                <li><strong>Activities:</strong>
+                    <ul>
+                        <li>Write blogs, articles, infographics, and videos targeting identified keywords.</li>
+                        <li>Focus on E-E-A-T (Experience, Expertise, Authority, and Trustworthiness) in all content.</li>
+                        <li>Refresh and update old content to maintain relevance.</li>
+                        <li>Create cornerstone content that establishes authority on key topics.</li>
+
+                    </ul>
+                </li>
+                <li><strong>Outcome:</strong>A fully optimized website that aligns with search engine guidelines.</li>
+            </ul>
+          
+        </article>
+        <article class="scroll-cards__item" aria-label="Wie - 1">
+            <h2>Off-Page Optimization</h2>
+            <ul style="padding-top: 20px;">
+                <li><strong>Objective:</strong>To build your website’s authority and trustworthiness through external activities.</li>
+                <li><strong>Activities:</strong>
+                    <ul>
+                        <li>Acquire high-quality backlinks from authoritative websites.</li>
+                        <li>Engage in guest posting and outreach to industry blogs.</li>
+                        <li>List your business in relevant directories and forums.</li>
+                        <li>Leverage social media platforms for content sharing and engagement.</li>
+
+                    </ul>
+                </li>
+                <li><strong>Outcome:</strong>Enhanced domain authority and improved trust in the eyes of search engines.</li>
+            </ul>
+          
+        </article> 
+       
+        </div>
+      </div>
+ </section>
